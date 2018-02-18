@@ -17,6 +17,11 @@ char buffer[MAX];
    sprintf(buffer,"jpegoptim %s",(char *)argv);
  else if(strstr((char *)argv, "png"))
    sprintf(buffer,"optipng %s",(char *)argv);
+ else if(strstr((char *)argv, "txt"))
+   sprintf(buffer,"tar -cvzf data_files/data.tar.gz %s",(char *)argv);
+ else
+   sprintf(buffer,"tar -cvzf data_files/def_data.tar.gz %s",(char *)argv);
+//https://www.cyberciti.biz/howto/question/general/compress-file-unix-linux-cheat-sheet.php
 
   system(buffer);
   return 0;
